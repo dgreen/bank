@@ -10,3 +10,5 @@ Each phase will have it's own branch for both start and end.  For example,
 The phases are
 
   * Inheritance
+  * TLogger Interface and a PrintTLogger implementation
+
