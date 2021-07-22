@@ -9,18 +9,19 @@ package edu.uab.ee333.bankinheritance;
  * wish to create a record of activity without putting I/O code into a model.
  */
 public interface Logger {
+
+  /* Define a level scheme */
+  public static final int DEBUG = 0;
+  public static final int INFO = 1;
+  public static final int WARN = 2;
+  public static final int ERROR = 3;
+  public static final int FATAL = 4;
+  public static final int ALWAYS = 5;
+
   /**
    * Conditionally log a message if level of the message is >= than the logLevel
    *
    * <p>A developer might define the logLevel values according to the following scheme
-   *
-   * <ul>
-   *   <li>0 - log all messages
-   *   <li>10 - log everything but debug messages
-   *   <li>20 - log only warnings and error messages
-   *   <li>30 - log only error messages
-   *   <li>40 - log only fatal error messages
-   * </ul>
    *
    * @param level the level of this message
    * @param message text of the message
