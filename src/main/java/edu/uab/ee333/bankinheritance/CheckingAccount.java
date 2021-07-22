@@ -1,10 +1,11 @@
+/*
+ * Author: David Green <DGreen@uab.edu>
+ * EE 333 Example
+ */
+
 package edu.uab.ee333.bankinheritance;
 
-/**
- * Model a checking account as a specialization of a bank account
- *
- * @author David Green DGreen@uab.edu
- */
+/** Model a checking account as a specialization of a bank account */
 public class CheckingAccount extends BankAccount {
 
   /**
