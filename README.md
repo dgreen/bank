@@ -11,4 +11,5 @@ The phases are
 
   * Inheritance
   * TLogger Interface and a PrintTLogger implementation
+  * Arrays of Accounts transformed to ArrayList
 
