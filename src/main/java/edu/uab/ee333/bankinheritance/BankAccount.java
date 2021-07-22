@@ -1,6 +1,11 @@
+/*
+ * Author: David Green <DGreen@uab.edu>
+ * EE 333 Example
+ */
+
 package edu.uab.ee333.bankinheritance;
 
-/** @author David Green DGreen@uab.edu */
+/** A generic BankAccount */
 public abstract class BankAccount {
 
   /** Present balance in account in cents */
