@@ -91,15 +91,6 @@ public abstract class BankAccount {
     return name + "'s bank account has " + balance + " cents in it at present";
   }
 
-  /**
-   * getClassAuthor return name of author
-   *
-   * @return string containing name of author
-   */
-  public static String getClassAuthor() {
-    return "David G. Green";
-  }
-
   public abstract void assessMonthlyFee();
 
   /**
