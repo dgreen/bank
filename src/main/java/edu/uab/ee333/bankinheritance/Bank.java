@@ -4,13 +4,13 @@
  */
 package edu.uab.ee333.bankinheritance;
 
+import java.util.ArrayList;
+
 /** Models a bank with many accounts */
 public class Bank {
 
-  private static final int MAX_ACCOUNTS = 100;
   private String name;
-  private BankAccount[] accounts;
-  private int numAccounts;
+  private ArrayList<BankAccount> accounts;
   private String newLine;
 
   /**
@@ -24,8 +24,7 @@ public class Bank {
     } else {
       this.name = name;
     }
-    accounts = new BankAccount[MAX_ACCOUNTS];
-    numAccounts = 0;
+    accounts = new ArrayList<>();
   }
 
   // queries
@@ -45,7 +44,7 @@ public class Bank {
    * @return the number of accounts as an integer
    */
   public int getNumAccounts() {
-    return numAccounts;
+    return accounts.size();
   }
 
   /**
@@ -58,27 +57,10 @@ public class Bank {
     String report = "";
     String reportSeparator = System.getProperty("line.separator");
 
-    for (int i = 0; i < numAccounts; i++) {
-      report += getStatement(i) + reportSeparator;
+    for (var account : accounts) {
+      report += account.toString() + reportSeparator;
     }
     return report;
-  }
-
-  /**
-   * Make a statement for the specified account
-   *
-   * @param accountNumber of the account to supply statement for
-   * @return string representing account statement
-   */
-  public String getStatement(int accountNumber) {
-    String statement;
-
-    if (accountNumber < 0 || accountNumber >= numAccounts) {
-      statement = "";
-    } else {
-      statement = accounts[accountNumber].toString();
-    }
-    return statement;
   }
 
   // commands
@@ -92,11 +74,7 @@ public class Bank {
    * @param account to be added
    */
   public void addAccount(BankAccount account) {
-    if (numAccounts < MAX_ACCOUNTS) {
-      accounts[numAccounts++] = account;
-    } else {
-      // handle error
-    }
+    accounts.add(account);
   }
 
   /** Pay interest on appropriate accounts */
